@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Microsoft Azure 101</title>
+  <link rel="stylesheet" type="text/css" href="project1Styles.css" media="screen">
+</head>
+
+<body>
+
+<header>
+
+  <hgroup>
+    <h1>Microsoft Azure</h1>
+    <h2>Learners’ Guide to Azure Web Applications</h2>
+  </hgroup>
+
+  <nav>
+    <ul>
+      <li><a href="#">Homepage</a></li>
+      <li><a href="#">About the Author</a></li>
+      <li><a href="#">Contact Me</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<section>
+
+<a name="top">
+
+<article>
+
+<h1>Fundamentals of Cloud Applications for the Newcomer</h1>
+
+<h2>Introduction</h2>
+
+<p>In this set of articles, we will discuss Microsoft Azure web apps. We will discuss the required tools and knowledge to start creating Web apps. It is assumed that the reader is already familiar with ASP.NET, Web API and the Azure platform.  The articles are developed with the ASP.NET developer in mind, as a result all samples will use C# and Visual Studio for .NET.</p>
+
+
+<h2>Overview of Azure App Service Web Apps</h2>
+
+<p>Azure App Service is a service for hosting web applications, REST APIs, and mobile back ends. It is specifically a PaaS, a platform-as-a-service.  Developers can use their language of comfort, be it .NET C#, .NET Core, Java, HTML5, Ruby, Node.js, PHP, or Python on Visual Studio with Azure SDK.  Applications run and scale with ease on both Windows and Linux-based environments.</p>
+
+<h2>Introduction to Azure Resource Groups: What they are and Why we need them</h2>
+
+<p>When any resource is created in Azure, it needs to be linked with either a new resource or an existing resource. Before creating and working with a resource such as Azure web apps, a requirement would be to learn about Azure Resource Groups. For e.g.: when a website is developed, there are multiple parts. One part is the client facing website, second is the service layer that can process all the requests, third would be the database layer that stores data. Each layer is an individual resource that makes up the complete solution. Azure resource group allows us to maintain and support the individual resources and the solution.</p> 
+<br>
+<p>Refer below for an example for how different resources interact with each other to deliver one complete solution:</p>
+
+<figure>
+  <img src="images/Resource-Group.jpg" alt="A diagram of the different components making up the Azure Resource Group">
+  <figcaption>Diagram (i). An Azure web app, Redis Cache, SQL database, DocumentDB, Azure Storage account comprising an Azure Resource Group for a sample web application.</figcaption>
+</figure>
+
+<p>Resource grouping allows implementation, deployment, management and monitoring of individual resources in the group. Also, the billing process is vastly improved since this provides costs for the resource group as opposed to individual resources. This helps to focus on the single resource unit as a whole instead of individual resources.</p>
+
+<p>Resources can be deployed across multiple regions and if the resources perform the same functionality, it would be under the same resource group. For e.g. a web app can be deployed in multiple regions and act as a backup when one web app fails. In above example, each Web app will be part of the same resource group.</p>
+
+<p>A single resource may exist in only one resource group but multiple resources in resource groups can be linked to achieve desired functionality. For e.g., a SQL database can be shared across multiple apps in different resource groups.</p>
+
+<h2>Basics of App Service Plans</h2>
+
+<p>App service plans allows teams to define pricing tier and region for deployment. The pricing tier is applicable to all Web apps, service types (Web apps, Mobile apps, Logic apps and API apps).</p>
+
+<br>
+<p>Below are the different plans:</p>
+
+<ol>
+  <li>Free: Free tier is for evaluation purposes only. Web Apps and other resources are shared with other Azure subscribers. Since resources are shared, daily compute time and bandwidth is limited.</li>
+  <li>Shared: Shared tier is also similar to Free tier in the sense that resources are shared but daily compute and bandwidth is increased. This plan is best suited for customers that have low traffic sites that do not need much bandwidth. This tier supports features such as customer domain and ability to scale out to multiple shared instances.</li>
+  <li>Basic: Basic tier provides dedicated machine instances for web app hosting. Basic tier does not have shared instances or resources. In this tier, user is able to scale and increase the size of virtual machines and cores. This tier also enables additional Azure Web App features and is backed by SLA.</li>
+  <li>Standard: Standard tier has all the features of basic tier and additional features such as auto scale, deployment slots, automated backups and support for Microsoft Azure Traffic Manager.</li>
+  <li>Premium: Premium tier has all the features of standard tier and additional features such as number of deployment slots, storage, and backups. BizTalk integration capabilities are supported by this tier.</li> 
+</ol>
+
+</article>
+
+<hr>
+
+<article>
+
+<h2>Build your Azure Web App using Azure portal</h2>
+
+<p>Azure portal can be accessed via 
+<a href="https://portal.azure.com">https://portal.azure.com</a>
+, a rich user interface to provision and manage resources in your Azure subscription.
+<br>Below section details out steps.</p>
+
+<h3>Create a Web App and SQL database: Step-by-step Guidance</h3>
+
+<p>Sign in to the Azure portal, click the +NEW button in the lower-left corner of the page. In the Create blade, select the Web + Mobile option. In the Web + Mobile blade, you will see options for creating various resources in Azure App Service, such as Web Apps, Mobile Apps, Logic Apps, and API Apps.</p>
+
+<p>At the bottom of the Web + Mobile blade, click Azure Marketplace. In the Azure Marketplace, options are available for creating common Azure Web App environments, such as a web app with a SQL database or a web app with a MySQL database, as shown below:</p>
+
+<figure>
+  <img src="images/azure-marketplace.jpg" alt="Web App options in the Azure Marketplace.">
+  <figcaption>Diagram (ii). Common Azure Web App environments can be created through multiple varying options.</figcaption>
+</figure>
+
+<p>Select the Web App + SQL option. This opens a blade describing the resources that this solution will create. Click the Create button at the bottom of the blade to begin configuring the web app and SQL database.</p>
+
+<p>Under the Web App + SQL blade, specify Azure Resource Group name to create a new resource group. Choose the Web App (Configure Required Settings) option after entering a resource group name, to load the Web App blade.</p>
+
+<h4>Configuring Web App settings</h4>
+
+<p>In the Web App blade, specify a globally unique URL for the web app. Web apps are created in the *.azurewebsites.net domain and, therefore, must be unique to this domain. You can create a custom domain to map to this URL.</p>
+
+<p>Next, specify an App Service Plan. Either choose an existing plan or create a new one. Next, enter a name in the text box. Creating a new App Service Plan will unlock the Pricing Tier and Location options in the Web App blade.</p>
+
+<p>Click the Pricing Tier option and change it to D1 Shared. If D1 Shared option is not visible, click the View All link in the upper-right corner to show all the pricing tiers.</p>
+
+<p>Click the Location option and select a region close to you.</p> 
+
+<p>Click the OK button at the bottom of the Web App blade. This will close the Web App blade and navigate back to the Web App + SQL blade.</p>
+
+<h4>Configuring SQL Database settings</h4>
+
+<p>Select the Database in the Web App + SQL blade, (Configure Required Settings) option to open the Database blade. Select the option to create a new database. If you have an existing SQL database, then you will have the option to select an existing database or create a new database.</p>
+ 
+<p>Specify the name of the new SQL database you will create in the New Database blade, Optionally, you may choose to change the Pricing Tier for your Database (not the web app) and Collation settings.</p>
+ 
+<p>Now select the Server (Configure Required Settings) option to open the New Server blade. In the New Server blade, specify a name for the server in which your database will be created and provide server admin credentials you later can use to sign in and manage the server.</p>
+
+<p>Apply the required server settings by clicking the OK button at the bottom of the New Server blade. This will close the New Server blade and take you back to the New Database blade.</p>
+ 
+<p>Apply the new database settings by clicking the OK button at the bottom of the New Database blade. This will close the New Database blade and take you back to the Web App + SQL blade.</p>
+ 
+<p>The Create button at the bottom of the Web App + SQL blade will be enabled after all the required settings described above have been applied. Click the Create button to create the Web App and SQL database.</p>
+ 
+<p>After a moment, the Azure Web App and SQL database (and server) will be provisioned and the Azure portal will open the Resource Group blade the resources were created in. In the Summary part of the blade, you can see all the resources that were created in the resource group.</p>
+
+<h3>Add an Azure Redis Cache to the Azure Resource Group</h3>
+
+<p>For applications that need caching, Azure’s Redis Cache as a service can be implemented. The Azure Redis Cache is based on the popular open source Redis Cache that is a distributed, in-memory cache service. It provides a level of performance and features unmatched by previous cache offerings in a way that is easy to use.</p>
+
+<p>You can click on Add button at the top of the blade and add Azure Redis Cache in the Resource Group blade.</p>
+
+<p>In the New Resource blade, select the Redis Cache option from the list of resources. Selecting this option will open a Redis Cache blade describing the services, pricing tiers, uses for the cache, and links to relevant resources. Click the Create button at the bottom of the Redis Cache blade to begin configuring the resource.</p>
+
+<p>Enter a globally unique DNS name for the cache, choose a pricing tier, and choose a location. The Resource Group and Subscription will appear locked in the blade because the Redis Cache is being added to the current resource group. </p>
+
+</article>
+
+<hr>
+
+<article>
+
+<h2>Build an Azure Web App using Visual Studio</h2>
+
+<p>To create a web app in Visual Studio, the Server Explorer window in Visual Studio can be very useful. It provides features for provisioning and managing resources in subscription from within native development environment. It doesn’t offer all capabilities the Azure portal does, but for the resources for which it does provide management capabilities, it is a significant time saver. Using Server Explorer to create a web app produces a web app environment to which web application can be published.</p>
+
+<p>Second approach to create web apps is to use the ASP.NET Web Application template to create a new web application project. Azure SDK Tools enables to target Web Apps or Virtual Machines when hosting in Azure. Creating a web app produces a web app environment and a web application project with the configuration needed to publish the web application to the host environment.</p>
+ 
+<p>The most feature-rich approach to creating a web app is to use the Cloud Deployment Project template to create new web application project. This template further exposes the notion of Azure Resource Groups when creating a new project by producing both a web application project and a deployment project in the solution. The deployment project leverages the Azure Resource Manager to create the web app environment for your web application and includes Windows PowerShell scripts and JSON files describing the environment that you can use to automate the deployment to Azure.</p> 
+
+<h3>The Server Explorer Approach</h3>
+ 
+<p>The Server Explorer window in Visual Studio has certain management capabilities that can be imported into your Visual Studio environment. This is useful in Dev environments some resources can be quickly provisioned and ideas can be developed or tested without moving from development environment.</p>
+ 
+<p>Connect to your Azure Subscription by right-clicking the Azure icon and selecting the option to Connect To Microsoft Azure Subscription.</p> 
+
+<p>Right-click the App Service node and select the option Create New Site. This will open a single page dialog where you can specify settings for the web app.</p> 
+
+<p>Some of the limitations are as follows:</p>
+
+<ul>
+  <li>You have the option to select an existing plan or to specify the name to create a new plan. If you choose to create a new plan, the pricing tier will default to F1 Free.</li> 
+  <li>The name of the SQL database will default to <web app name>_db, where <web app name> is the web app name specified at the top of the dialog. This cannot be changed.</li> 
+  <li>You cannot specify the tier for your SQL database if you choose to create one.</li> 
+  <li>There is no option to select a MySQL database. You would need to use the Azure portal if you want a MySQL database.</li> 
+  <li>There is no option to add an Azure Redis Cache. You can add an Azure Redis Cache later by using the Azure portal.</li> 
+</ul>
+
+<h3>The ASP.NET Web Application template Approach</h3>
+
+<p>Web application development involves navigating through the New ASP.NET Web Application Project Wizard in Visual Studio and selecting a desired template. Azure SDK Tools for Visual Studio allows configuring and provisioning Azure web app resources as you move through the wizard.</p>
+ 
+<h3>The Azure Resource Group template Approach</h3>
+
+<p>This is a template that's fairly recent and contains JSON files or templates that the Azure Resouce Manager uses to define your resources and to account for them.  Using a Windows PowerShell script, redeployment is made easy and automated.  Artifacts like an ASP.NET MVC Web Application project can be deployed to your web app resource if you so wish to do so.</p>
+
+</article>
+
+<hr>
+
+<article>
+
+<h2>Connection Strings and App Settings</h2>
+
+<p>The web.config file for an application was previously used to store application settings and connection strings in an encrypted format.  This sensitive information was then available to the entire team through the source control system.  Azure Web Apps improves on this situation with a solution to store connection strings and settings in the web app environment to be fetched dynamically during app run.</p>
+
+<p>The application can then be published to different environments by storing these settings within the environment.  No additional modification of config files and config transforms is required.  RBAC can be used to control access.</p>
+
+<h2>Role Based Access Control</h2>
+
+<p>In order to manage the access control part of your Azure subscription, the Azure platform offers a feature known as Role Based Access Control or RBAC.  This feature lets you decide how you want to grant access and distribute access permissions to various users or user groups.</p>
+
+<p>RBAC is programmed via the Azure Resource Manager(ARM) REST APIs and is a part of the latest Azure portal.  The Azure Active Directory is used for authentication of users and authorizing access to resources based on user roles.</p>
+
+<h3>Subscription-level Roles</h3>
+
+<p>There are three roles on the Azure platform that allow for RBAC implementation at the subscription level:</p>
+
+<ul>
+<li>Owner: The owner is a built-in role that can create and manage all resource types including managing the access privileges to child resources.  Owners are service administrators or co-administrator on a subscription.  The level of permissions for the role applies to all subscription resources.</li>
+<li>Contributor: The contributor is a built-in role that has less privileges than the owner, can create and manage resources but can't add or delete role assignments.</li>
+<li>Reader: The reader is a built-in role that has access to read resources.  'Secrets' are inaccessible where secrets are app settings, connection strings and deployment credentials.</li>
+</ul> 
+
+<figure>
+<img src="images/Roles-Users.jpg" alt="Picture of the Roles and Users in the Access section of the Subscription blade."
+<figcaption>Diagram (iii). Access section of the Subscription blade showing the Users and Roles described above.</figcaption>
+</figure>
+
+<h3>Resource-level Roles</h3>
+
+<p>The Azure Web App Resource provider introduces two additional roles specific to Web Apps namely the "User Access Administrator" and the "Website Contributor".  These two roles are available along with the three built-in roles to assign roles for a particular resource.  RBAC is most useful for its provision of assigning resource-level roles, wherein a user can be assigned a role for a single resource.  This way, a user or group can be configured to have access to a single specific web app.</p>
+
+<aside>
+<h4>Did You Know</h4>
+Microsoft datacenters have been around for over 25 years.  Microsoft cloud datacenters provide over 200 online services of which one is Microsoft Azure.  Azure is available in 141 countries in 10 languages.  Some of the things you can do with Azure include creating a single Virtual Machine with 32 TB of storage.
+<br><br>
+TIP:  While this page delves right into Web Apps, newcomers who want to catch up on the basics and knowledge on Azure platform or the Azure portal can read the Microsoft Azure Essentials:Fundamentals of Azure ebook.   
+</aside>
+
+<h2>Conclusion</h2>
+<p>Here, in these articles, we have taken an introductory perspective with focus on what Azure Resource Groups are, followed by a look at App Service Plans, then several different ways to create Azure Web Apps.  We have briefly touched upon storage/retrieval of connection strings and role-based access control for assigning access privileges.</p> 
+
+
+<p><a href="#top">To Top of Page</a></p>
+<p><a href="subfolder/glossary.html">Glossary</a></p>
+
+
+</article>
+
+
+</section>
+
+<footer>
+<small>Copyright © 2019 Meena Vaithi</small>
+
+  <nav>
+    <ul>
+      <li><a href="#">Homepage</a></li>
+      <li><a href="#">About the Author</a></li>
+      <li><a href="#">Contact Me</a></li>
+    </ul>
+  </nav>
+
+</footer>
+</body>
+</html>
+
