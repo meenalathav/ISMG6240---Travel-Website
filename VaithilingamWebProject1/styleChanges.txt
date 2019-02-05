@@ -1,6 +1,6 @@
 Changes in Styles:
 
-1) Text color within the <section> area has been changed to a shade of blue. (color:#0E4D92;)
+1) Text color of the text within the <section> area has been changed to a shade of blue. (color:#0E4D92;)
 
 2) Header <h4> has been introduced with font size set to 90% of the default browser text size so it's smaller than the other headers and also text in uppercase to stand out from <p> area text.
 
