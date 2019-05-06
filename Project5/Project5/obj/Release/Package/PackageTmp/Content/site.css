@@ -1,0 +1,286 @@
+﻿
+/* Type Selectors */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+header {
+    background-color: black;
+    color: white;
+    margin-bottom: 1px;
+}
+
+hgroup h1 {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Verdana';
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+hgroup h2 {
+    text-transform: uppercase;
+    font-family:'Calibri';
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1em;
+    padding-top: 0;
+}
+
+article h1 {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 2em;
+    font-family: 'Verdana';
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+h3 {
+    color: antiquewhite;
+}
+
+section {
+    background-color: black ;
+    padding-bottom: 150px;
+}
+
+article {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    padding: 10px 10px 10px 10px;
+    color: aliceblue;
+}
+
+img {
+    margin: auto;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+    padding: 0px 20px 0px 20px;
+    text-align: justify;
+}
+
+article li{
+    margin-left: 20px;
+}
+
+span {
+    font-weight: bold;
+}
+
+li a {
+    color: lavender;
+}
+
+aside {
+    width: 80%;
+    border: solid;
+    margin: 0 auto;
+    padding: 20px;
+    border-color: midnightblue;
+    border-radius: 20px;
+    background-color: aliceblue;
+    color: darkred;
+    text-align: center;
+}
+
+/* Class Selectors */
+
+.container-fluid {
+    padding: 0px 5px 0px 5px;
+    margin: 0;
+}
+
+.navbar-default {
+    background-color: thistle;
+}
+
+.navbar-default .navbar-nav li a {
+    color: crimson;
+    font-weight: bolder;
+}
+
+.jumbotron {
+    background-color: black;
+    padding: 0;
+    width: 100%;
+}
+
+.container-fluid .jumbotron {
+    border-radius: 0;
+}
+
+.highlight {
+    color: crimson;
+    font-weight: bold;
+}
+
+.imgBtn {
+    float: left;
+    box-shadow: 5px 5px 7px 3px gray;
+    margin: 50px 50px 50px 0px;
+    background-color: white;
+    background-size : auto;
+}
+
+.caption {
+    text-align:left;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.logoBanner{
+    margin-bottom: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.a {
+    font-family: Verdana;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.btn {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.breadcrumb {
+    background-color: gray;
+    margin-bottom: 5px;
+}
+
+.breadcrumb > .active {
+    color: antiquewhite;
+}
+
+.breadcrumb li + li::before {
+        content: ">\00a0";
+        color: thistle;
+}
+
+.breadcrumb li a {
+    text-decoration: underline;
+    text-decoration-color: lavender;
+}
+.dropdown-menu > .active > a {
+    background-color : lightgray;
+}
+
+.userTextArea {
+    border-left: dotted;
+    border-right: dotted;
+    border-left-color: aliceblue;
+    background-color: darkgray;
+    padding-left: 20px;
+    margin-top:30px;
+    height: 450px;
+}
+
+.userTextArea label {
+
+    text-shadow: -1px -1px 0 black, 
+                  1px -1px 0 black, 
+                  1px 1px 0 black,
+                 -1px 1px 0 black;
+}
+
+.btn-success {
+    background-color: thistle;
+    color: crimson;
+    font-weight: bold;
+}
+
+.wrap {
+    white-space: normal;
+    width: 190px;
+}
+
+
+/* ID Selectors */
+#about {
+    background-color: thistle; 
+    color: black;
+    padding: 50px 50px 50px 50px;
+}
+
+#about h3 {
+    color: darkred;
+}
+
+#contact {
+    background-color: lightsteelblue;
+    color: black;
+    padding: 50px 50px 50px 50px;
+    margin-bottom: 10px;
+}
+
+#contact h3 {
+    color: darkred;
+}
+
+#lblCost {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#details {
+    border: dotted;
+    border-color: antiquewhite;
+    padding: 2px 2px 2px 5px;
+    margin-bottom: 5px;
+}
+
+#lstUserCart {
+    min-height: 8em;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#dlTestimonials {
+    border-left: double;
+    border-left-color: aliceblue; 
+    padding-left: 10px;
+    margin-top: 30px;
+    font-family: 'Bradley Hand ITC';
+    font-size: 1.5em;
+}
+
+#dlTestimonials span {
+    color: thistle;
+    font-weight: bold;
+}
+
+

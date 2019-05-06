@@ -1,0 +1,217 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Project5.Site" ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-138763673-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138763673-1');
+    </script>
+
+    <title>Magic Carpet|Travel Packages and Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/site.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="headPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+    <form id="form1" runat="server" class="form-horizontal">
+
+        <a name="top"></a>
+        <asp:ContentPlaceHolder ID="bannerPlaceHolder" runat="server">
+            <img class="img-responsive img-rounded logoBanner" src="/Images/cloudsBanner1.jpg" alt="Company's logo website banner" />
+        </asp:ContentPlaceHolder>
+
+        <nav class="navbar navbar-default" role="menubar">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Default">Magic Carpet</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+
+                    <ul id="navList" runat="server" class="nav navbar-nav">
+                        <li runat="server" role="menuitem">
+                            <asp:HyperLink NavigateUrl="~/Default" runat="server">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            Home</asp:HyperLink>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Explore <span class="glyphicon glyphicon-triangle-bottom"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Page2" runat="server">
+                            <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                            Local Destinations</asp:HyperLink></li>
+                                <li role="separator" class="divider"></li>
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Page3" runat="server">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            International Destinations</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li runat="server" role="menuitem">
+                            <asp:HyperLink NavigateUrl="~/Order" runat="server">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Book a Tour</asp:HyperLink>
+                        </li>
+                        <li runat="server" role="menuitem">
+                            <asp:HyperLink NavigateUrl="~/Cart" runat="server">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                Hop to Cart&nbsp;<span id="cartCounter" runat="server" class="badge"></span>
+                            </asp:HyperLink>
+                        </li>
+                        <li runat="server" role="menuitem">
+                            <asp:HyperLink NavigateUrl="~/Testimonials" runat="server">
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                Testimonials</asp:HyperLink>
+                        </li>
+                    </ul>
+                    <ul id="navList1" runat="server" class="nav navbar-right navbar-nav">
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Info" runat="server">
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                             About Us</asp:HyperLink>
+                                    </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <span class="hidden">You are here: </span>
+            <ol class="breadcrumb">
+                <asp:Literal ID="breadcrumbLiteral" runat="server"></asp:Literal>
+            </ol>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="jumbotron">
+                <asp:ContentPlaceHolder ID="jumbotronPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+            <header class="col-sm-12">
+                <hgroup>
+                    <asp:ContentPlaceHolder ID="headerPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+                </hgroup>
+            </header>
+
+            <main>
+                <asp:ContentPlaceHolder ID="mainPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+
+            <footer class="col-sm-12">
+
+                <nav class="navbar navbar-default navbar-inverse" role="menubar">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#footerMenu">
+                                <span class="sr-only">Toggle navigation-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="footerMenu">
+
+                            <ul id="navListFooter" runat="server" class="nav navbar-nav">
+
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Default" runat="server">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            Home</asp:HyperLink>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Explore<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li runat="server" role="menuitem">
+                                            <asp:HyperLink NavigateUrl="~/Page2" runat="server">
+                            <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+                            Local Destinations</asp:HyperLink></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li runat="server" role="menuitem">
+                                            <asp:HyperLink NavigateUrl="~/Page3" runat="server">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            International Destinations</asp:HyperLink>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Order" runat="server">
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            Book a Tour</asp:HyperLink>
+                                </li>
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Cart" runat="server">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            Hop to Cart</asp:HyperLink>
+                                </li>
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Testimonials" runat="server">
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                Testimonials</asp:HyperLink>
+                                </li>
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="~/Info" runat="server">
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                             About Us</asp:HyperLink>
+                                </li>
+                            </ul>
+
+                            <ul runat="server" class="nav navbar-right navbar-nav">
+
+                                <li runat="server" role="menuitem">
+                                    <asp:HyperLink NavigateUrl="#top" runat="server">
+                            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                            Back to Top</asp:HyperLink>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="text-center text-capitalize">
+                    copyright © meena vaithi. may 2019
+                </div>
+
+            </footer>
+
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>
